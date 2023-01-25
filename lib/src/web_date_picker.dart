@@ -4,21 +4,22 @@ import 'string_extension.dart';
 
 /// Class [WebDatePicker] help display date picker on web
 class WebDatePicker extends StatefulWidget {
-  const WebDatePicker({
-    Key? key,
-    this.initialDate,
-    this.firstDate,
-    this.lastDate,
-    required this.onChange,
-    this.style,
-    this.width = 200,
-    this.height = 36,
-    this.prefix,
-    this.dateformat = 'yyyy/MM/dd',
-    this.overlayVerticalPosition = 5.0,
-    this.overlayHorizontalPosiition = 0.0,
-    this.inputDecoration,
-  }) : super(key: key);
+  const WebDatePicker(
+      {Key? key,
+      this.initialDate,
+      this.firstDate,
+      this.lastDate,
+      required this.onChange,
+      this.style,
+      this.width = 200,
+      this.height = 36,
+      this.prefix,
+      this.dateformat = 'yyyy/MM/dd',
+      this.overlayVerticalPosition = 5.0,
+      this.overlayHorizontalPosiition = 0.0,
+      this.inputDecoration,
+      })
+      : super(key: key);
 
   /// The initial date first
   final DateTime? initialDate;
@@ -51,6 +52,8 @@ class WebDatePicker extends StatefulWidget {
 
   /// The date format will be displayed in date form field
   final String dateformat;
+
+  //icon calendar
 
   @override
   _WebDatePickerState createState() => _WebDatePickerState();
@@ -147,6 +150,7 @@ class _WebDatePickerState extends State<WebDatePicker> {
           width: widget.width,
           height: widget.height,
           child: TextFormField(
+            style: widget.style,
             focusNode: _focusNode,
             controller: _controller,
             decoration: widget.inputDecoration ??
